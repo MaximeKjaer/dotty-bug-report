@@ -15,9 +15,11 @@ before_cache:
 # One build job per bug report:
 matrix:
   include:
-    - script:
+    - name: indirect-valueof
+      script:
         - cd indirect-valueof
         - sbt compile
-    - script:
+    - name: infinite-loop-match-types
+      script:
         - cd infinite-loop-match-types
         - sbt compile
