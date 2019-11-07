@@ -2,18 +2,15 @@ import scala.compiletime.S
 
 object InfiniteLoopMatchType {
     def main(args: Array[String]): Unit = {
+        // Compiles quickly:
         val a: 2 = 2
         val b: 3 = 3
-        // Compiles:
-        implicitly[(a.type + b.type) =:= (b.type + a.type)]
         implicitly[(a.type * b.type) =:= (b.type * a.type)]
-        testSum(2, 3)
 
-        // Infinite loop on Dotty 0.19.0-RC1
+        // Infinite loop on Dotty 0.20.0-RC1
         // testProd(2, 3)
     }
 
-    def testSum(a: Int, b: Int)(given ev: (a.type + b.type) =:= (b.type + a.type)) = true
     def testProd(a: Int, b: Int)(given ev: (a.type * b.type) =:= (b.type * a.type)) = true
 
     type *[A <: Int, B <: Int] <: Int = A match {
