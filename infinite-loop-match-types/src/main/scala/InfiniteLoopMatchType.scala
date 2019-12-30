@@ -8,7 +8,7 @@ object InfiniteLoopMatchType {
         implicitly[(a.type * b.type) =:= (b.type * a.type)]
 
         // Infinite loop on Dotty 0.20.0-RC1
-        // testProd(2, 3)
+        testProd(2, 3)
     }
 
     def testProd(a: Int, b: Int)(given ev: (a.type * b.type) =:= (b.type * a.type)) = true
