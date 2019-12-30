@@ -23,3 +23,7 @@ matrix:
       script:
         - cd infinite-loop-match-types
         - sbt compile
+    - name: match-types-recursion-limit
+      script:
+        - cd match-types-recursion-limit
+        - sbt compile
