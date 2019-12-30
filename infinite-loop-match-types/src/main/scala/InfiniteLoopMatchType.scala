@@ -7,7 +7,7 @@ object InfiniteLoopMatchType {
         val b: 3 = 3
         implicitly[(a.type * b.type) =:= (b.type * a.type)]
 
-        // Infinite loop on Dotty 0.20.0-RC1
+        // Infinite loop on Dotty 0.21.0-RC1
         testProd(2, 3)
     }
 
