@@ -27,3 +27,7 @@ matrix:
       script:
         - cd match-types-recursion-limit
         - sbt compile
+    - name: hlist-assertion-fail
+      script:
+        - cd hlist-assertion-fail
+        - sbt compile
