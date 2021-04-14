@@ -1,4 +1,4 @@
-import scala.compiletime.S
+import scala.compiletime.ops.int.S
 
 object InfiniteLoopMatchType {
     def main(args: Array[String]): Unit = {
@@ -8,10 +8,11 @@ object InfiniteLoopMatchType {
         implicitly[(a.type * b.type) =:= (b.type * a.type)]
 
         // Infinite loop on Dotty 0.21.0-RC1
+        // 17-35 seconds on Scala 3.0.0-RC2
         testProd(2, 3)
     }
 
-    def testProd(a: Int, b: Int)(given ev: (a.type * b.type) =:= (b.type * a.type)) = true
+    def testProd(a: Int, b: Int)(using ev: (a.type * b.type) =:= (b.type * a.type)) = true
 
     type *[A <: Int, B <: Int] <: Int = A match {
         case 0 => 0
