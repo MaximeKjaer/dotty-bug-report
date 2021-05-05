@@ -1,5 +1,14 @@
 ## sbt project compiled with Dotty
 
+Current output:
+
+```
+Test:   Some(/** This is a docstring */)
+Test2:  None
+Quotes: None
+Option: None
+```
+
 ### Usage
 
 This is a normal sbt project, you can compile code with `sbt compile` and run it
