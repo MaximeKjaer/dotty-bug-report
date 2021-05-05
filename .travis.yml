@@ -31,3 +31,7 @@ matrix:
       script:
         - cd hlist-assertion-fail
         - sbt compile
+    - name: docstring-none
+      script:
+        - cd docstring-none
+        - sbt compile
